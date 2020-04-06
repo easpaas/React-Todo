@@ -50,19 +50,25 @@ class App extends React.Component {
     });
   };
 
-  clearCompleted = () => {
-    
+  clearCompleted = e => {
+    e.preventDefault();
+    // any todo object that has a completed value of true will be filtered into setState
+    this.setState({
+      todos: this.state.todos.filter(item => !item.completed)
+    });
   }
 
   render() {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
-        <TodoForm addTodo={this.addTodo} />
+        <TodoForm 
+          addTodo={this.addTodo}
+          clearCompleted={this.clearCompleted} 
+        />
         <TodoList 
           todoList={this.state.todos}
           toggleTodo={this.toggleTodo}
-          clearCompleted={this.clearCompleted} 
         />
       </div>
     );

@@ -9,7 +9,6 @@ const TodoList = (props) => {
           key={item.id} 
           todo={item} 
           toggleTodo={props.toggleTodo}
-          clearCompleted={props.clearCompleted}
         />
       )
     })
