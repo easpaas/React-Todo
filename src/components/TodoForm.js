@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 
 class TodoForm extends React.Component {
@@ -9,16 +9,24 @@ class TodoForm extends React.Component {
     }
   };
 
-  // TODO handleChange
   handleChanges = e => {
-    this.setState({ [e.target.name]: e.target.value});
+    this.setState({ formData: e.target.value });
   }
-  // TODO handleSubmit
-  handleSubmit
+
+  handleSubmit = e => {
+    e.preventDefault();
+    this.setState({formData: ''});
+    this.props.addTodo(e, this.state.formData);
+  }
+
+  // clearCompleted = e => {
+
+  // }
+
 
   render() {
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <input 
           type="text" 
           name="item"
@@ -26,8 +34,8 @@ class TodoForm extends React.Component {
           value={this.state.formData} 
           onChange={this.handleChanges}
         />
-        <button type="submit">Add todo</button>
-        <button type="button">Clear completed</button>
+        <button>Add todo</button>
+        <button>Clear completed</button>
       </form>
     );
   }
