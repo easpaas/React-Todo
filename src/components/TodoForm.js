@@ -10,7 +10,7 @@ class TodoForm extends React.Component {
   };
 
   handleChanges = e => {
-    this.setState({ formData: e.target.value });
+    this.setState({formData: e.target.value});
   }
 
   handleSubmit = e => {
@@ -18,11 +18,6 @@ class TodoForm extends React.Component {
     this.setState({formData: ''});
     this.props.addTodo(e, this.state.formData);
   }
-
-  // clearCompleted = e => {
-
-  // }
-
 
   render() {
     return (

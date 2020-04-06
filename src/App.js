@@ -33,12 +33,37 @@ class App extends React.Component {
       });
   };
 
+  toggleTodo = todoId => {
+    // map over array
+    // when we find the item we clicked, toggle the completed field
+    // otherwise return the item untouched
+    this.setState({
+      todos: this.state.todos.map(item => {
+        if (todoId === item.id) {
+          return {
+            ...item,
+            completed: !item.completed
+          };
+        }
+        return item;
+      })
+    });
+  };
+
+  clearCompleted = () => {
+    
+  }
+
   render() {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
         <TodoForm addTodo={this.addTodo} />
-        <TodoList todoList={this.state.todos} />
+        <TodoList 
+          todoList={this.state.todos}
+          toggleTodo={this.toggleTodo}
+          clearCompleted={this.clearCompleted} 
+        />
       </div>
     );
   }
