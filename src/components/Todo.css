@@ -1,3 +1,28 @@
 .completed {
   text-decoration: line-through;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  width: 40%;
+  margin: 2% auto;
+  padding: 2%;
+  border: 1px dashed mediumpurple;
+}
+.btn {
+  width: 50%;
+  margin: 2% auto;
+  padding: 2%;
+  border: 1px solid purple;
+  font-variant: small-caps;
+}
+.btn.one {
+  background-color: mediumorchid;
+}
+.btn.two {
+  background-color: mediumvioletred;
+}

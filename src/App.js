@@ -2,14 +2,8 @@ import React from 'react';
 import TodoList from './components/TodoList';
 import TodoForm from './components/TodoForm';
 
-
-const todos = [
-  {
-    task: 'todo task', 
-    id: Date.now(), 
-    completed: false
-  }
-];
+// Intialize empty array of todos
+const todos = [];
 
 
 class App extends React.Component {
@@ -60,8 +54,10 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <h2>Welcome to your Todo App!</h2>
+      <div 
+        style={{border:'4px solid purple', width: '30%', margin: '0 auto', padding: '5%', backgroundColor: 'black', color: 'mediumpurple'}}
+      >
+        <h2 style={{fontWeight: '300', fontVariant: 'small-caps', fontFamily: 'san-serif', marginBottom: '20%'}}>Welcome to your Todo App!</h2>
         <TodoForm 
           addTodo={this.addTodo}
           clearCompleted={this.clearCompleted} 
