@@ -57,7 +57,7 @@ class App extends React.Component {
       <div 
         style={{border:'4px solid purple', width: '30%', margin: '0 auto', padding: '5%', backgroundColor: 'black', color: 'mediumpurple'}}
       >
-        <h2 style={{fontWeight: '300', fontVariant: 'small-caps', fontFamily: 'san-serif', marginBottom: '20%'}}>Welcome to your Todo App!</h2>
+        <h2 style={{textAlign: 'center', fontWeight: '300', fontVariant: 'small-caps', fontFamily: 'san-serif', marginBottom: '20%'}}>Welcome to your Todo App!</h2>
         <TodoForm 
           addTodo={this.addTodo}
           clearCompleted={this.clearCompleted} 
