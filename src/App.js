@@ -55,10 +55,34 @@ class App extends React.Component {
   render() {
     return (
       <div 
-        style={{border:'4px solid purple', width: '30%', margin: '0 auto', padding: '5%', backgroundColor: 'black', color: 'mediumpurple'}}
+        style={
+          {
+            border:'4px solid purple', 
+            width: '30%', 
+            margin: '0 auto', 
+            padding: '5%', 
+            backgroundColor: 'black', 
+            color: 'mediumpurple'
+          }
+        }
       >
-        <h2 style={{textAlign: 'center', fontWeight: '300', fontVariant: 'small-caps', fontFamily: 'san-serif', marginBottom: '20%'}}>Welcome to your Todo App!</h2>
-        <TodoForm 
+        {/* TODO add an image or logo of something with a checklist  */}
+        <h2 style={
+          {
+            border: '2px dashed purple', 
+            padding: '5%', 
+            textAlign: 'center', 
+            fontWeight: '300', 
+            fontVariant: 'small-caps', 
+            fontFamily: 'san-serif', 
+            marginBottom: '20%'
+            }
+          }
+        >
+          Welcome to your Todo App!
+        </h2>
+        <TodoForm
+          todoList={this.state.todos}
           addTodo={this.addTodo}
           clearCompleted={this.clearCompleted} 
         />
